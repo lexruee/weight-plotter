@@ -1,6 +1,11 @@
 wplot
 =====
 
+A helper program to plot weight measurements and the linerar trend based
+on the data. The input file must be in the ``csv`` format. First column
+must be the ``date`` values, while the second column must contain the
+``weight`` measurements.
+
 Installation
 ------------
 
