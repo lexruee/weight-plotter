@@ -24,3 +24,11 @@ Options:
   --no-gui              Don't show the gui
   --help                Show this message and exit.
 ```
+
+## Example Usage
+
+```
+pipenv run wplot tests/data.csv 
+```
+
+![](https://raw.githubusercontent.com/lexruee/weight-plotter/master/figure.png)
