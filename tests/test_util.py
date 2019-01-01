@@ -13,7 +13,12 @@ def test_de_mean():
     mean = sum(numbers)/len(numbers)
     numbers_demean = [x - mean for x in numbers]
     assert util.de_mean(numbers) == numbers_demean
-    
+
+def test_read_data():
+    date_data, weight_data = util.read_data('./data.csv')
+    assert len(date_data) != 0
+    assert len(weight_data) != 0
+
 def test_ols():
     def create_random_list(size):
         return [random.random() for _ in range(0, size)]
@@ -27,3 +32,10 @@ def test_ols():
     assert type(yp) is np.ndarray
     assert u is not None
     assert type(u) is np.ndarray
+
+def test_ols_with_data():
+    _, y = util.read_data('./data.csv')
+    nums = list(range(0, len(y)))
+    X = [nums]
+    beta, yp, u = util.ols(y, X, const=True)
+
